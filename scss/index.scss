@@ -30,28 +30,28 @@ $spacing-50: 4px;
 // typography
 @mixin text-preset-1 {
   font-family: "Figtree Extra Bold", sans-serif;
-  font-size: 24px;
+  font-size: clamp(20px, 5vw, 24px);
   line-height: 150%;
   letter-spacing: 0px;
 }
 
 @mixin text-preset-2 {
   font-family: "Figtree Medium", sans-serif;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   line-height: 150%;
   letter-spacing: 0px;
 }
 
 @mixin text-preset-3 {
   font-family: "Figtree Medium", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   line-height: 150%;
   letter-spacing: 0px;
 }
 
 @mixin text-preset-3-bold {
   font-family: "Figtree Extra Bold", sans-serif;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   line-height: 150%;
   letter-spacing: 0px;
 }
@@ -91,13 +91,15 @@ body {
   background-color: $color-white;
   padding: $spacing-300;
   border-radius: 20px;
-  border: 1px solid $color-gray-950;
-  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1);
+  box-shadow: 8px 8px 0px rgba(0, 0, 0, 1),
+    inset 0px 0px 0px 1px $color-gray-950;
   display: flex;
   flex-direction: column;
   gap: $spacing-300;
 
   &__img {
+    height: 200px;
+    object-fit: cover;
     display: block;
     width: 100%;
     border-radius: 10px;
@@ -158,31 +160,7 @@ body {
 
   &__name {
     @include text-preset-3-bold;
-  }
-}
-
-// media queries
-@media (max-width: 576px) {
-  .card {
-    &__img {
-      height: 200px;
-      object-fit: cover;
-    }
-
-    &__tag,
-    &__date {
-      font-size: 12px;
-    }
-
-    &__title {
-      h2 {
-        font-size: 20px;
-      }
-    }
-
-    &__descr {
-      font-size: 14px;
-    }
+    font-size: 14px;
   }
 }
 
