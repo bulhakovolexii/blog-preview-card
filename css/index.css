@@ -21,6 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
 }
 
 .bg {
@@ -127,10 +128,8 @@ body {
 .attribution {
   font-size: 11px;
   text-align: center;
-  /* to ignore footer height in flex container and centering card relative to viewport */
-  position: absolute;
   width: 100%;
-  bottom: 12px;
+  padding: 12px 0;
 }
 
 .attribution a {
